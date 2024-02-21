@@ -3,7 +3,10 @@ package com.example.theplanetsapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -23,14 +26,14 @@ public class MainActivity extends AppCompatActivity {
         // 2 - Data Source: ArrayList<Planet>
         planetsArrayList = new ArrayList<>();
 
-        Planet planet1 = new Planet("Earth", "1", R.drawable.earth);
-        Planet planet2 = new Planet("Mercury", "0", R.drawable.mercury);
-        Planet planet3 = new Planet("Venus", "0", R.drawable.venus);
-        Planet planet4 = new Planet("Mars", "2", R.drawable.mars);
-        Planet planet5 = new Planet("Jupiter", "79", R.drawable.jupiter);
-        Planet planet6 = new Planet("Saturn", "83", R.drawable.saturn);
-        Planet planet7 = new Planet("Uranus", "27", R.drawable.uranus);
-        Planet planet8 = new Planet("Neptune", "14", R.drawable.neptune);
+        Planet planet1 = new Planet("Earth", "1 moon", R.drawable.earth);
+        Planet planet2 = new Planet("Mercury", "0 moon", R.drawable.mercury);
+        Planet planet3 = new Planet("Venus", "0 moon", R.drawable.venus);
+        Planet planet4 = new Planet("Mars", "2 moons", R.drawable.mars);
+        Planet planet5 = new Planet("Jupiter", "79 moons", R.drawable.jupiter);
+        Planet planet6 = new Planet("Saturn", "83 moons", R.drawable.saturn);
+        Planet planet7 = new Planet("Uranus", "27 moons", R.drawable.uranus);
+        Planet planet8 = new Planet("Neptune", "14 moons", R.drawable.neptune);
 
         planetsArrayList.add(planet1);
         planetsArrayList.add(planet2);
@@ -45,5 +48,18 @@ public class MainActivity extends AppCompatActivity {
         adapter = new MyCustomAdapter(planetsArrayList, getApplicationContext());
 
         listView.setAdapter(adapter);
+
+        // Handling click events
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+                Toast.makeText(
+                        MainActivity.this,
+                        "Planet selected: " +adapter.getItem(position).getPlanetName(),
+                        Toast.LENGTH_SHORT).show();
+
+            }
+        });
     }
 }
