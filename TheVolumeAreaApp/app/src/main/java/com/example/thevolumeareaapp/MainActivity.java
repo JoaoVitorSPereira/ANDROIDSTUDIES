@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -50,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int j, long l) {
 
-                    Intent i = new Intent(getApplicationContext(), Sphere.class);
+                    Intent i = new Intent(getApplicationContext(), Volume.class);
+                    i.putExtra("Name", shapeArrayList.get(j).getShapeName());
                     startActivity(i);
-
             }
         });
     }

@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/back2"
-    tools:context=".Sphere">
+    tools:context=".Volume">
 
     <TextView
-        android:id="@+id/sphereVolumeTitle"
+        android:id="@+id/volumeTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
         android:gravity="center"
-        android:text="Sphere Volume"
+        android:text="Volume"
         android:textColor="@color/white"
         android:textSize="32sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,12 +21,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/radiusInput"
+        android:id="@+id/volumeInput"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="275dp"
         android:textColor="@color/white"
-        android:hint="Please enter the radius"
+        android:hint="Please enter the volume"
         android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,22 +38,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="88dp"
-        android:text="Calculate the radius"
+        android:text="Calculate the volume"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radiusInput" />
+        app:layout_constraintTop_toBottomOf="@+id/volumeInput" />
 
     <TextView
         android:id="@+id/resultText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="240dp"
-        android:text="Result"
+        android:text="Volume result"
         android:textColor="@color/white"
-        android:textSize="38sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radiusInput" />
+        app:layout_constraintTop_toBottomOf="@+id/volumeInput" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
