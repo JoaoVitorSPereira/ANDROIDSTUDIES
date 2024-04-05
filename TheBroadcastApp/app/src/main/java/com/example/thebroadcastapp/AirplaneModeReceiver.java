@@ -3,6 +3,7 @@ package com.example.thebroadcastapp;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.widget.Toast;
 
 public class AirplaneModeReceiver extends BroadcastReceiver {
 
@@ -16,6 +17,8 @@ public class AirplaneModeReceiver extends BroadcastReceiver {
             boolean isAirplaneModeOn = intent.getBooleanExtra("state", false);
 
             String msg = isAirplaneModeOn ? "AIRPLANE MODE IS ON" : "AIRPLANE MODE IS OFF";
+
+            Toast.makeText(context, "" + msg, Toast.LENGTH_SHORT).show();
         }
     }
 }
